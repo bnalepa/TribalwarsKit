@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DataGetter\" />
+    <Folder Include="DataFiles\" />
   </ItemGroup>
 
 </Project>
