@@ -7,7 +7,8 @@ namespace TribalwarsKit.Controllers
         public IActionResult Index()
         {
             string server = "pl186";
-            UpdateData.CheckSync(server);
+            string type = "player";
+            UpdateData.CheckSync(server,type);
 
 
             return View();

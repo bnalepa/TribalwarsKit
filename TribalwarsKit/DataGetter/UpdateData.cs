@@ -1,4 +1,6 @@
-﻿namespace TribalwarsKit.DataGetter
+﻿using System.Numerics;
+
+namespace TribalwarsKit.DataGetter
 {
     public class UpdateData
     {
@@ -36,16 +38,14 @@
 
 
 
-        public static async Task UpdatePlayerData(string server)
+        public static async Task UpdateDatabase(string server, string type)
         {
-            string websiteUrl = $"https://{server}.plemiona.pl/map/player.txt";
+            string websiteUrl = $"https://{server}.plemiona.pl/map/{type}.txt";
             string responeData = await GetDataFromWebsite(websiteUrl);
 
             if (responeData != null)
             {
-                //Console.WriteLine("Respone Data:");
-                //Console.WriteLine(responeData);
-                string filePath = ".\\DataFiles\\PlayerData.txt";
+                string filePath = $".\\DataFiles\\{type}.txt";
 
                 SaveStringAsTxt(responeData, filePath);
 
@@ -56,10 +56,10 @@
                 Console.WriteLine("Failed to retrieve XML data from the website.");
             }
         }
-        public static async Task CheckSync(string server)
+        public static async Task CheckSync(string server, string type)
         {
             //ADD IF 
-            UpdatePlayerData(server);
+            UpdateDatabase(server, type);
         }
 
     }
