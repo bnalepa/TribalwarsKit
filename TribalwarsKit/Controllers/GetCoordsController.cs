@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TribalwarsKit.DataGetter;
+
 namespace TribalwarsKit.Controllers
 {
     public class GetCoordsController : Controller
