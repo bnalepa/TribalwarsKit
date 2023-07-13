@@ -16,3 +16,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+/*    */
+.coords_field {
+    display: block;
+    height: 40px;
+    width: 40vw;
+}
